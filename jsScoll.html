@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <style>
-      #show {
-        position: fixed; /* সবসময় স্ক্রিনে থাকবে */
-        top: 10px; /* উপরে থেকে 10px */
-        left: 10px; /* বাম থেকে 10px */
-        background: yellow;
-        padding: 5px 10px;
-        border: 1px solid black;
-        font-size: 18px;
+      .card {
+        width: 150px;
+        height: 100px;
+        border: 2px solid red;
+        text-align: center;
       }
     </style>
   </head>
-  <body style="height: 2000px">
-    <h2 id="show">Scoll position show</h2>
+
+  <body>
+    <div class="card">
+      <h2>Alhamdulillah</h2>
+      <h3 id="show">top</h3>
+    </div>
 
     <script>
       function checkScoll() {
-        //scroll position (top to how much px)
         let scrollTop = window.scrollY || document.documentElement.scrollTop;
-        document.getElementById("show").innerText =
-          "now Scroll" + scrollTop + "px";
+        document.querySelector("#show").innerText =
+          "now scroll " + scrollTop + "px";
       }
 
-      //scroll update
       window.addEventListener("scroll", checkScoll);
 
-      // first check
       checkScoll();
     </script>
   </body>

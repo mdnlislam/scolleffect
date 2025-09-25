@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .border {
+        height: 300px;
+        width: 400px;
+        border: 4px solid red;
+        overflow: auto;
+        position: relative;
+        margin: 20px;
+      }
+
+      .content {
+        height: 1000px; /* scroll করার জায়গা */
+        position: relative;
+      }
+
+      .card {
+        width: 200px;
+        height: 120px;
+        border: 2px solid red;
+        text-align: center;
+        position: absolute; /* absolute div-relative */
+        left: 20px;
+        top: 0;
+        background: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="border">
+      <div class="content">
+        <div class="card" id="card">
+          <h2>Alhamdulillah</h2>
+          <h3 id="show">top</h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const card = document.getElementById("card");
+      const show = document.getElementById("show");
+      const scrollDiv = document.querySelector(".border");
+
+      scrollDiv.addEventListener("scroll", () => {
+        const scrollTop = scrollDiv.scrollTop;
+        card.style.top = scrollTop + "px"; // move card with scroll
+        show.innerText = "ScrollTop: " + scrollTop + " px";
+      });
+    </script>
+  </body>
+</html>

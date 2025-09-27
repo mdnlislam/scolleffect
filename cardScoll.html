@@ -49,6 +49,23 @@
         card.style.top = scrollTop + "px"; // move card with scroll
         show.innerText = "ScrollTop: " + scrollTop + " px";
       });
+
+      const numbers = [1, 24, 3, 5, 8, 10, 25];
+
+      const even = [];
+      const odd = [];
+      console.log(even);
+      console.log(odd);
+
+      for (num of numbers) {
+        if (num % 2 === 0) {
+          even.push(num);
+        } else {
+          odd.push(num);
+        }
+      }
+
+      //console.log(numbers);
     </script>
   </body>
 </html>
